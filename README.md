@@ -1,16 +1,16 @@
-# [项目名称] - 科技节作品
+# 名称 - 科技节作品
 
 ## 🚀 项目简介
-本项目基于[![行空板 M10](https://img.shields.io/badge/%E8%A1%8C%E7%A9%BA%E6%9D%BF-M10-blue)](https://unihiker.com.cn/products/m10)开发
+简介
 
 ## 📋 功能列表
-- 功能1（例如：人脸识别登录）
-- 功能2（例如：温度数据可视化）
-- 功能3（例如：语音控制开关）
+- 功能
+- 功能
+- 功能
 
 ## 🛠️ 环境要求
 - [![行空板 M10](https://img.shields.io/badge/%E8%A1%8C%E7%A9%BA%E6%9D%BF-M10-blue)](https://unihiker.com.cn/products/m10)
-- Python版本：3.6+
+- Python版本：3.7.3+
 - 依赖库：
   ```bash
   pip install requests
@@ -20,45 +20,34 @@
 ## 📥 安装指南
 ### 通过GitHub获取
 ```bash
-git clone [你的仓库地址]
-cd [文件地址]
+cd root/mindplus/cache/
+git init
+git clone https://github.com/RyaninChina11/YCCJTechFestival2025.git
 ```
 
 ### 手动安装
-1. 下载ZIP压缩包
-2. 解压到指定目录
-3. 安装依赖：
-   ```bash
-   pip install -r requirements.txt
-   ```
+1.
+2.
 
 ## 🎮 使用说明
 ### 快速启动
 ```bash
 python main.py
 ```
-
-### 参数说明（如果有命令行参数）
-```bash
-python main.py --mode=debug  # 调试模式运行
-```
-
 ### 操作示例
-（如果有图形界面，用文字或截图说明操作步骤）
+图片
 
 ## ⚙️ 配置文件（如果有）
-说明config.ini等配置文件的修改方法
+config.ini
 
 ## ⚠️ 注意事项
-- 需要摄像头/麦克风等硬件支持（根据实际情况写）
-- 首次运行需要联网下载模型文件
-- 常见问题解决办法
+- 注意
+- 事项
 
 ## 📜 开源协议
 本项目采用 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://github.com/RyaninChina11/YCCJTechFestival2025/blob/main/LICENSE)
 
 ## ⚖️ 版权声明与致谢
-
 本项目基于以下技术服务构建：
 - 文字转语音功能由 [您的第三方API](about:blank) 提供技术支持
 
