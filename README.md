@@ -49,7 +49,8 @@ config.ini
 
 ## ⚖️ 版权声明与致谢
 本项目基于以下技术服务构建：
-- 文字转语音功能由 [您的第三方API](about:blank) 提供技术支持
+- 文字转语音功能由 [百度短文本在线合成API](https://cloud.baidu.com/doc/SPEECH/s/mlbxh7xie) 提供技术支持
+- 天气查询功能由[高德天气查询API](https://lbs.amap.com/api/webservice/guide/api/weatherinfo) 提供技术支持
 
 本作品仅用于教育目的，未经授权不得用于商业用途
 
