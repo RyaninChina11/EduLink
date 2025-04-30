@@ -1,6 +1,6 @@
 MIT License
 
-Copyright (c) 2025 RyaninChina11 (Zihang Xiao)
+Copyright (c) 2025 RyaninChina11 (Zihang Xiao) & Kejun Sun
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
