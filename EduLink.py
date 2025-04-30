@@ -33,6 +33,7 @@ try:
     siot.getsubscribe(topic=MQTT_TOPIC)
 except Exception:
     log.critical("MQTT错误",exc_info=True)
+    exit(0)
 weatherDic = {
     "晴": 61900,
     "少云": 61902,
@@ -141,30 +142,30 @@ def get_current_course(timetable):
         for course in daily_courses:
             start = datetime.datetime.strptime(course["start"], "%H:%M").time()
             start_dt = datetime.datetime.combine(now.date(), start)
-            if 0 < (start_dt - current_datetime).total_seconds() <= 120:
+            if 0 < (start_dt - now).total_seconds() <= 120:
                 return format_reminder_output(course)
         return format_no_class_output()
     except KeyError:
         log.error("错误：课表字段缺失",exc_info=True)
-        return "当前没有课程\n "
+        return "当前没有课程\n"
     except Exception as e:
         log.error(f"未知错误",exc_info=True)
-        return "当前没有课程\n "
+        return "当前没有课程\n"
 
 def format_course_output(course):
     return (
-        f"🏫{course['name']}\n"
+        f"{course['name']}\n"
         f"{course['start']} - {course['end']}"
     )
 
 def format_reminder_output(course):
     return (
-        f"🔔{course['name']}\n"
+        f"{course['name']}\n"
         f"{course['start']} - {course['end']}"
     )
 
 def format_no_class_output():
-    return "🏫🔔当前没有课程\n"
+    return "当前没有课程\n"
 
 def weatherUpdate():
     global realweather,weatherPicText
@@ -199,7 +200,7 @@ def scheduleUpdate():
         if(currentClass!=get_current_course(timetable) and "当前没有课程\n"!=get_current_course(timetable)):
             log.info("开始生成提醒语音")
             voiceName=randName()
-            TTS.run(get_current_course(timetable).split('\n')[0]+"课，开始了！",voiceName)
+            TTS.run(get_current_course(timetable).split('\n')[0]+"课，马上开始了！",voiceName)
             currentClass = get_current_course(timetable)
             time.sleep(1)
             try:
@@ -214,7 +215,7 @@ def scheduleUpdate():
 timetableJSON = {}
 try:
     log.info("课表请求开始发送")
-    timetableJSON = requests.get("https://timetables.2025.techfestival.yccj.ryanincn11.top/timetable.json")
+    timetableJSON = requests.get("https://scdl.edulink.ryanincn11.top/timetable.json")
     log.info(f"课表请求返回\n{timetableJSON.text}")
     log.info("开始JSON解码")
     timetable = json.loads(timetableJSON.text)
