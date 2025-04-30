@@ -47,6 +47,7 @@ git clone https://github.com/RyaninChina11/EduLink.git
 
 ## 🎮 快速启动
 ```bash
+cd root/mindplus/cache/EduLink/
 python EduLink.py
 ```
 
@@ -55,7 +56,7 @@ python EduLink.py
 - 如有任何操作上的问题，访问[EduLink官网](https://edulink.ryanincn11.top/)以观看视频教程
 
 ## 📜 开源协议
-本项目采用 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://github.com/RyaninChina11/YCCJTechFestival2025/blob/main/LICENSE)
+本项目采用 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://github.com/RyaninChina11/YCCJTechFestival2025/blob/main/LICENSE.md)
 
 ## ⚖️ 版权声明与致谢
 本项目基于以下技术服务构建：
@@ -66,7 +67,7 @@ python EduLink.py
 本作品仅用于教育目的，未经授权不得用于商业用途
 
 ## 📞 联系方式
-- 作者：肖梓航，孙轲俊
+- 作者：肖梓航&孙轲俊
 - 班级：六(1)班
 - 邮箱：18149721348@163.com
 - GitHub: [RyaninChina11](https://github.com/RyaninChina11)
