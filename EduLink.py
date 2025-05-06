@@ -1,4 +1,4 @@
-import time, datetime, requests, json, TTS, logging, random, os, siot, configparser
+import time, datetime, requests, json, TTS, logging, random, os, siot, configparser, hashlib
 from requests.exceptions import RequestException
 from unihiker import GUI, Audio
 config = configparser.ConfigParser()
@@ -106,21 +106,19 @@ weatherDic = {
 }
 
 timetable = {}
-def randName():
-    ID=""
-    for i in range(10):
-        ID+=chr(random.randint(33,126))
-    return "audio/"+ID
+def getName(text):
+    hashName = hashlib.md5(text.encode("utf-8"))
+    return "audio/"+str(hashName.hexdigest())
 
 def on_message_callback(client, userdata, msg):
     log.info("收到远程消息 内容为 "+msg.payload.decode())
     log.info("开始生成远程消息语音")
-    voiceName=randName()
+    voiceName=getName(msg.payload.decode())
     TTS.run(msg.payload.decode(),voiceName)
     currentClass = get_current_course(timetable)
     time.sleep(1)
     try:
-        log.info("开始播放语音")
+        log.info(f"开始播放语音 {voiceName}")
         audio.play(voiceName+".mp3")
     except pygame.Exception:
         log.error("播放错误",exc_info=True)
