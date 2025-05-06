@@ -10,17 +10,21 @@ if not os.path.exists(os.path.join(os.getcwd(), "audio")):
 logging.basicConfig(filename='log/'+time.strftime("%Y-%m-%d %H:%M:%S")+'.log', filemode='w', level=logging.DEBUG, format = '%(asctime)s at %(name)s %(levelname)s : %(message)s')
 log = logging.getLogger(__name__)
 WEATHER_KEY=""
+WEATHER_CITY="310106"
 MQTT_TOPIC=""
 MQTT_USER=""
 MQTT_PWD=""
+SCDL_PATH="https://scdl.edulink.ryanincn11.top/timetable.json"
 try:
     config.read('config.ini')
     TTS.API_KEY=config.get('TTS', 'API_KEY')
     TTS.SECRET_KEY=config.get('TTS', 'SECRET_KEY')
     WEATHER_KEY=config.get('WEATHER', 'KEY')
+    WEATHER_CITY=str(config.get('WEATHER', 'CITY'))
     MQTT_TOPIC=config.get('MQTT', 'TOPIC')
     MQTT_USER=config.get('MQTT', 'USER')
     MQTT_PWD=config.get('MQTT', 'PASSWORD')
+    SCDL_PATH=config.get('SCDL', 'PATH')
 except Exception:
     log.critical("配置文件读取失败",exc_info=True)
     exit(0)
@@ -170,7 +174,7 @@ def weatherUpdate():
     while True:
         try:
             log.info("天气请求开始发送")
-            weatherJSON = requests.get("https://restapi.amap.com/v3/weather/weatherInfo?city=310106&key=f59801dded2d7b1c4f61c766a495038c")
+            weatherJSON = requests.get("https://restapi.amap.com/v3/weather/weatherInfo?city="+WEATHER_CITY+"&key="+WEATHER_KEY)
             log.info(f"天气请求返回\n{weatherJSON.text}")
             log.info("开始JSON解码")
             weather = json.loads(weatherJSON.text)
@@ -213,7 +217,7 @@ def scheduleUpdate():
 timetableJSON = {}
 try:
     log.info("课表请求开始发送")
-    timetableJSON = requests.get("https://scdl.edulink.ryanincn11.top/timetable.json")
+    timetableJSON = requests.get(SCDL_PATH)
     log.info(f"课表请求返回\n{timetableJSON.text}")
     log.info("开始JSON解码")
     timetable = json.loads(timetableJSON.text)
