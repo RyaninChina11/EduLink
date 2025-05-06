@@ -42,7 +42,7 @@ git clone https://github.com/RyaninChina11/EduLink.git
 ## ⚙️ 配置文件
 - 打开config.ini
 - 修改[TTS]下的参数为[百度短文本在线合成API](https://cloud.baidu.com/doc/SPEECH/s/mlbxh7xie)提供的API_KEY和SECRET_KEY
-- 修改[WEATHER]下的参数为[高德天气查询API](https://lbs.amap.com/api/webservice/guide/api/weatherinfo)提供的KEY
+- 修改[WEATHER]下的参数为[高德天气查询API](https://lbs.amap.com/api/webservice/guide/api/weatherinfo)提供的KEY以及CITY（城市代码）
 - 修改[MQTT]下的参数为[EasyIoT](https://iot.dfrobot.com.cn/)提供的TOPIC,USER和PASSWORD
 - 修改[SCDL]下的参数为您自己的课表JSON文件网址(默认为我们提供的测试课表)
 
