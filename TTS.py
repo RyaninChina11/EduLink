@@ -1,8 +1,8 @@
 import requests
 import urllib.parse
 
-API_KEY = "Idgz5MsDCXq10aVTprgtht7v"
-SECRET_KEY = "61pXuMyrXAtumr7AsdWwhYFw6iSMjpP9"
+API_KEY = ""
+SECRET_KEY = ""
 
 def run(tex,name):
     url = "https://tsn.baidu.com/text2audio"
