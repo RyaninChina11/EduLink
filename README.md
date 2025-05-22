@@ -13,9 +13,6 @@
 
 ## 💡设计方案与技术实现
 
-### ✒️设计草图
-![%E6%9C%AA%E5%91%BD%E5%90%8D.png](https://p.sda1.dev/23/b0c62812a168914a3c9d0f5dcb125ff0/未命名.png)
-
 ### 🛠️ 技术原理
 - 使用Python语言编写本作品及应用程序
 - 使用Unihiker库（Pygame库）实现显示
