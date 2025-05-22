@@ -31,30 +31,8 @@
 - 三维建模与行空板大小相符的外壳，并预留出两个接口
 - 将外壳套上行空板，做接口插拔测试
 
-# 📥 使用指南
-
-## 通过GitHub部署
-```bash
-cd root/mindplus/cache/
-git init
-git clone https://github.com/RyaninChina11/EduLink.git
-```
-## ⚙️ 配置文件
-- 打开config.ini
-- 修改[TTS]下的参数为[百度短文本在线合成API](https://cloud.baidu.com/doc/SPEECH/s/mlbxh7xie)提供的API_KEY和SECRET_KEY
-- 修改[WEATHER]下的参数为[高德天气查询API](https://lbs.amap.com/api/webservice/guide/api/weatherinfo)提供的KEY以及CITY（城市代码）
-- 修改[MQTT]下的参数为[EasyIoT](https://iot.dfrobot.com.cn/)提供的TOPIC,USER和PASSWORD
-- 修改[SCDL]下的参数为您自己的课表JSON文件网址(默认为我们提供的测试课表)
-
-## 🎮 快速启动
-```bash
-cd root/mindplus/cache/EduLink/
-python EduLink.py
-```
-
-## ⚠️ 注意事项
-- 请先确保配置文件配置正确和网络良好，再启动程序
-- 如有任何操作上的问题，访问[EduLink官网](https://edulink.ryanincn11.top/)以查看教程
+# 📥 使用教程
+访问[EduLink官网](https://edulink.ryanincn11.top/)以查看教程
 
 ## 📜 开源协议
 本项目采用 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://github.com/RyaninChina11/YCCJTechFestival2025/blob/main/LICENSE.md)
