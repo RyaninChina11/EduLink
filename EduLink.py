@@ -119,7 +119,6 @@ def on_message_callback(client, userdata, msg):
     log.info("开始生成远程消息语音")
     voiceName=getName(msg.payload.decode())
     TTS.run(msg.payload.decode(),voiceName)
-    currentClass = get_current_course(timetable)
     time.sleep(1)
     try:
         log.info(f"开始播放语音 {voiceName}")
